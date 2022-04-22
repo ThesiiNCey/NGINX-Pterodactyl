@@ -21,7 +21,7 @@ RUN wget https://nginx.org/download/nginx-1.21.5.tar.gz \
     --with-stream=dynamic \
     --with-http_addition_module \
 && make \
-&& make install
+&& make install && apt install -y certbot && sudo apt install -y python3-certbot-nginx
 
 USER container
 ENV  USER container
